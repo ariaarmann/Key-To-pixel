@@ -30,8 +30,8 @@ def lenset(clen):
     img.putpixel((100,100) , (r ,g , b , a))
     
 
-
-img = Image.open("black.png").convert("RGBA")
+imgl = input("ENter your images directory... \n")
+img = Image.open(imgl).convert("RGBA")
 code = input("input your code: ")
 key = int(input("Enter your key (key>0): "))
 

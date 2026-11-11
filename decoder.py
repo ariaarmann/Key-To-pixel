@@ -30,9 +30,9 @@ def lenget():
     r , g , b ,a = img.getpixel((100,100))
     len = (r*256) + g
     return len
-
-img = Image.open("Encoded.png")
-key = int(input("What is the code? "))
+imgl = input("enter your images directory...\n")
+img = Image.open(imgl)
+key = int(input("What is the key? "))
 try:
     print(decoder(key))
 except: 
