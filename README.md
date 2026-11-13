@@ -7,3 +7,10 @@ for more security a KEY will be added by Encoder witch the client will choose
 
 This program is a simple Encoder/Decoder using Pillow library.
 It transfers each character to a color using the UNICODDE system and pixel color codes.
+
+
+## Requirements
+
+- Python 3.10+
+- Tkinter (included with standard Python installation)
+- Pillow 13.0.0
