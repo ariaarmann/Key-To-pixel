@@ -2,7 +2,8 @@
 .venv/
 venv/
 env/
-
+*.zip
+Encoded.png
 # Python Cache
 __pycache__/
 *.py[cod]
