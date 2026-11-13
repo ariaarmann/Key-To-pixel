@@ -1,7 +1,7 @@
 from PIL import Image
 import math
-def encoder(code ,clen , key):
-    lenset(clen)
+def encoder(code ,clen , key , img):
+    lenset(clen , img)
     codeW = int(math.sqrt(clen))+1
     flag = False
     for j in range(1 , ((codeW-1)*10)+2 , 10):
@@ -23,24 +23,24 @@ def encoder(code ,clen , key):
             img.putpixel((i , j) , (r,g,b , a))
 
 
-def lenset(clen):
+def lenset(clen , img):
     r , g , b ,a = img.getpixel((100,100))
     r = clen // 256
     g = clen % 256
     img.putpixel((100,100) , (r ,g , b , a))
     
-
-imgl = input("ENter your images directory... \n")
-img = Image.open(imgl).convert("RGBA")
-code = input("input your code: ")
-key = int(input("Enter your key (key>0): "))
-
-while key <= 0 :
-    print("KEY VALUE SHOULD BE ABOVE ZERO!!")
+if __name__ == "main":
+    imgl = input("Enter your images directory... \n")
+    img = Image.open(imgl).convert("RGBA")
+    code = input("input your code: ")
     key = int(input("Enter your key (key>0): "))
 
-clen = len(code)
-encoder(code , clen , key)
+    while key <= 0 :
+        print("KEY VALUE SHOULD BE ABOVE ZERO!!")
+        key = int(input("Enter your key (key>0): "))
 
-img.save("Encoded.png")
+    clen = len(code)
+    encoder(code , clen , key , img)
+
+    img.save("Encoded.png")
 
